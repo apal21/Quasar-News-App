@@ -17,7 +17,7 @@
         </q-btn>
 
         <q-toolbar-title>
-          News
+          {{ title }}
           <span slot="subtitle">
             Content
           </span>
@@ -32,23 +32,24 @@
 
         <q-list no-border link inset-delimiter>
           <q-list-header>Essential Links</q-list-header>
-          <q-item class="active" v-ripple>
+          <q-item :class="this.$route.matched[0].path === '' ? 'active' : ''" @click="changePath('/')" v-ripple>
             <q-item-side icon="school" />
-            <q-item-main label="Docs" />
+            <q-item-main label="News Index" />
           </q-item>
-          <q-item v-ripple>
-            <q-item-side icon="record_voice_over" />
-            <q-item-main label="Forum" />
-          </q-item>
-          <q-item v-ripple>
+          <q-item :class="this.$route.matched[0].path === '/tips/:id' ? 'active' : ''" @click="changePath('/tips/url-of-tips-section')" v-ripple>
             <q-item-side icon="chat" />
-            <q-item-main label="Gitter Channel" />
+            <q-item-main label="Tips" />
           </q-item>
-          <q-item v-ripple>
+          <q-item :class="this.$route.matched[0].path === '/tutorials/:id' ? 'active' : ''" v-ripple>
+            <q-item-side icon="record_voice_over" />
+            <q-item-main label="Tutorials" />
+          </q-item>
+          <q-item :class="this.$route.matched[0].path === '/dont know' ? 'active' : ''" v-ripple>
             <q-item-side icon="rss feed" />
-            <q-item-main label="Twitter" />
+            <q-item-main label="Don't Know" />
           </q-item>
         </q-list>
+        
       </div>
 
       <!-- End Navbar -->
@@ -137,9 +138,28 @@ export default {
         '-ms-transform': transform,
         transform
       }
+    },
+    title () {
+      if (this.$route.matched[0].path === '/tips/:id') {
+        document.title = 'News App - Tips'
+        return 'Tips'
+      }
+      document.title = 'News App'
+      return 'News'
     }
   },
   methods: {
+    changePath (path) {
+      let width = viewport().width
+      if (width < 768) {
+        this.$refs.layout.hideLeft(() => {
+          this.$router.push(path)
+        })
+      }
+      else {
+        this.$router.push(path)
+      }
+    },
     launch (url) {
       openURL(url)
     },

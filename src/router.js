@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Hello from '@/Hello.vue'
+import Tips from '@/Tips.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,8 @@ export default new VueRouter({
    * build publicPath back to '' so Cordova builds work again.
    */
   routes: [
-    { path: '/', component: Hello }
+    { path: '/', component: Hello },
+    { path: '/tips/:id', component: Tips },
+    { path: '*', component: Hello }
   ]
 })
