@@ -255,7 +255,6 @@ export default {
 @import '~variables'
 
 main
-  text-align center
   min-height 100% !important
   height 100% !important
 

@@ -5,8 +5,19 @@
           <q-card inline>
             <q-card-title>
                 JavaScript
-                <span slot="subtitle">Subtitle</span>
             </q-card-title>
+
+            <q-card-separator />
+
+            <q-card-main>
+                <p>Dynamic Frontend</p>
+                <p class="text-faded">
+                    JavaScript is the programming language of HTML and the Web. JavaScript is easy to learn.
+                </p>
+            </q-card-main>
+
+            <q-card-separator />
+
             <q-card-actions>
                 <q-btn flat>Tips</q-btn>
                 <q-btn flat>Tutorials</q-btn>
@@ -18,8 +29,19 @@
           <q-card inline>
             <q-card-title>
                 PHP
-                <span slot="subtitle">Subtitle</span>
             </q-card-title>
+
+            <q-card-separator />
+
+            <q-card-main>
+                <p>Server King</p>
+                <p class="text-faded">
+                    PHP is a server scripting language, and a powerful tool for making dynamic web pages.
+                </p>
+            </q-card-main>
+
+            <q-card-separator />
+
             <q-card-actions>
                 <q-btn flat>Tips</q-btn>
                 <q-btn flat>Tutorials</q-btn>
@@ -31,8 +53,19 @@
           <q-card inline>
             <q-card-title>
                 Laravel
-                <span slot="subtitle">Subtitle</span>
             </q-card-title>
+
+            <q-card-separator />
+
+            <q-card-main>
+                <p>Best in PHP</p>
+                <p class="text-faded">
+                    Love beautiful code? We do too. The PHP Framework For Web Artisans.
+                </p>
+            </q-card-main>
+
+            <q-card-separator />
+
             <q-card-actions>
                 <q-btn flat>Tips</q-btn>
                 <q-btn flat>Tutorials</q-btn>
@@ -44,8 +77,19 @@
           <q-card inline>
             <q-card-title>
                 Android
-                <span slot="subtitle">Subtitle</span>
             </q-card-title>
+
+            <q-card-separator />
+
+            <q-card-main>
+                <p>Most popular Mobile OS</p>
+                <p class="text-faded">
+                    From phones and watches to cars and TVs, customise your digital life with Android.
+                </p>
+            </q-card-main>
+
+            <q-card-separator />
+            
             <q-card-actions>
                 <q-btn flat>Tips</q-btn>
                 <q-btn flat>Tutorials</q-btn>
@@ -117,9 +161,11 @@ li
     min-width 320px
     margin-top 10px
 
+.q-card-main 
+    padding-bottom 0
+
 .q-card-actions
     display block
-    text-align center
 
 .bigger
     width 450px
