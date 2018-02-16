@@ -151,7 +151,7 @@ export default {
   methods: {
     changePath (path) {
       let width = viewport().width
-      if (width < 768) {
+      if (width < 992) {
         this.$refs.layout.hideLeft(() => {
           this.$router.push(path)
         })
