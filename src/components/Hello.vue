@@ -1,7 +1,7 @@
 <template>
 
     <div class="hello row">
-        <div class="col s4" v-for="(title, index) in titles">
+        <div class="col s4" v-for="(title, index) in titles" :key="title">
           <q-card inline>
             <q-card-title>
                 {{ title }}
