@@ -1,11 +1,8 @@
 export default {
-  titles (state) {
-    return state.topics.titles
+  topics (state) {
+    return state.topics
   },
-  subtitles (state) {
-    return state.topics.subtitles
-  },
-  descriptions (state) {
-    return state.topics.descriptions
+  news (state) {
+    return state.news
   }
 }

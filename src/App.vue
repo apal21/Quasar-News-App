@@ -36,6 +36,10 @@
             <q-item-side icon="school" />
             <q-item-main label="News Index" />
           </q-item>
+          <q-item :class="this.$route.matched[0].path === '/topics' ? 'active' : ''" @click="changePath('/topics')" v-ripple>
+            <q-item-side icon="school" />
+            <q-item-main label="Topics" />
+          </q-item>
           <q-item :class="this.$route.matched[0].path === '/tips/:id' ? 'active' : ''" @click="changePath('/tips/url-of-tips-section')" v-ripple>
             <q-item-side icon="chat" />
             <q-item-main label="Tips" />
@@ -140,7 +144,11 @@ export default {
       }
     },
     title () {
-      if (this.$route.matched[0].path === '/tips/:id') {
+      if (this.$route.matched[0].path === '/topics') {
+        document.title = 'News App - Topics'
+        return 'Topics'
+      }
+      else if (this.$route.matched[0].path === '/tips/:id') {
         document.title = 'News App - Tips'
         return 'Tips'
       }

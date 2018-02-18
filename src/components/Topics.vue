@@ -1,18 +1,18 @@
 <template>
 
     <div class="hello row">
-        <div class="col s4" v-for="(title, index) in titles" :key="title">
+        <div class="col s4" v-for="topic in topics" :key="topic.title">
           <q-card inline>
             <q-card-title>
-                {{ title }}
+                {{ topic.title }}
             </q-card-title>
 
             <q-card-separator />
 
             <q-card-main>
-                <p>{{ subtitles[index] }}</p>
+                <p>{{ topic.subtitle }}</p>
                 <p class="text-faded">
-                    {{ descriptions[index] }}
+                    {{ topic.description }}
                 </p>
             </q-card-main>
 
@@ -69,14 +69,8 @@ export default {
     QVideo
   },
   computed: {
-    titles () {
-      return this.$store.getters.titles
-    },
-    subtitles () {
-      return this.$store.getters.subtitles
-    },
-    descriptions () {
-      return this.$store.getters.descriptions
+    topics () {
+      return this.$store.getters.topics
     }
   }
 }
